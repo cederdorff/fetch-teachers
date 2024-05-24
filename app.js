@@ -12,7 +12,9 @@ async function initApp() {
 }
 
 async function getTeachers() {
-  const response = await fetch("https://cederdorff.com/race/data/users.json"); // Fetch the data from the URL
+  const response = await fetch(
+    "https://raw.githubusercontent.com/cederdorff/race/master/data/users.json"
+  ); // Fetch the data from the URL
   const data = await response.json(); // Parse the data as JSON into readable JavaScript objects (array of objects)
   return data; // Return the data
 }
