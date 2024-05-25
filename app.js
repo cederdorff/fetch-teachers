@@ -34,21 +34,3 @@ function displayTeachers(teachers) {
     );
   }
 }
-
-function displayTeachersGrid(teachers) {
-  const teachersGrid = document.querySelector("#teachers-grid");
-
-  for (const teacher of teachers) {
-    teachersGrid.insertAdjacentHTML(
-      "beforeend",
-      /*html*/ `
-          <article class="grid-item">
-            <img src="${teacher.image}" alt="${teacher.name}" />
-            <h2>${teacher.name}</h2>
-            <p>${teacher.title}</p>
-            <a href="mailto:${teacher.mail}">${teacher.mail}</a>
-          </article>
-        `
-    );
-  }
-}
