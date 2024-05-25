@@ -27,7 +27,7 @@ function displayTeachers(teachers) {
       "beforeend",
       /*html*/ `
       <li>
-       ${teacher.name} - ${teacher.mail}
+       ${teacher.name} - <a href="mailto:${teacher.mail}">${teacher.mail}</a>
       </li>
     `
     );
