@@ -1,8 +1,14 @@
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(172, 198, 201);
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: center;
   padding: 1em;
 }
