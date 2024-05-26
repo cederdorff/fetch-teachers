@@ -12,7 +12,7 @@ async function initApp() {
 
 async function getTeachers() {
   const response = await fetch(
-    "https://headless.cederdorff.dk/wp-json/wp/v2/teachers?acf_format=standard"
+    "https://headless.cederdorff.dk/wp-json/wp/v2/teachers?acf_format=standard&orderby=title&order=asc"
   ); // Fetch the data from the URL
   const data = await response.json(); // Parse the data as JSON into readable JavaScript objects (array of objects)
   return data; // Return the data
