@@ -12,7 +12,7 @@ async function initApp() {
 
 async function getTeachers() {
   const response = await fetch(
-    "https://raw.githubusercontent.com/cederdorff/race/master/data/users.json"
+    "https://headless.cederdorff.dk/wp-json/wp/v2/teachers?acf_format=standard"
   ); // Fetch the data from the URL
   const data = await response.json(); // Parse the data as JSON into readable JavaScript objects (array of objects)
   return data; // Return the data
@@ -26,10 +26,10 @@ function displayTeachersGrid(teachers) {
       "beforeend",
       /*html*/ `
           <article class="grid-item">
-            <img src="${teacher.image}" alt="${teacher.name}" />
-            <h2>${teacher.name}</h2>
-            <p>${teacher.title}</p>
-            <a href="mailto:${teacher.mail}">${teacher.mail}</a>
+            <img src="${teacher.acf.image}" alt="${teacher.acf.name}" />
+            <h2>${teacher.acf.name}</h2>
+            <p>${teacher.acf.title}</p>
+            <a href="mailto:${teacher.acf.mail}">${teacher.acf.mail}</a>
           </article>
         `
     );
