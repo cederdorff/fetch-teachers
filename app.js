@@ -10,6 +10,7 @@ async function initApp() {
   displayTeachersGrid(teachers); // Call the displayTeachersGrid function
 }
 
+// Get (fetch) the teachers from the URL (Headless WP)
 async function getTeachers() {
   const response = await fetch(
     "https://raw.githubusercontent.com/cederdorff/race/master/data/users.json"
@@ -18,9 +19,11 @@ async function getTeachers() {
   return data; // Return the data
 }
 
+// Display the teachers in a grid
 function displayTeachersGrid(teachers) {
-  const teachersGrid = document.querySelector("#teachers-grid");
+  const teachersGrid = document.querySelector("#teachers-grid"); // Get the teachers-grid element
 
+  // Loop through the teachers and insert the data into the grid. The data is inserted as an article HTML tag with the teacher's image, name, title, and mail
   for (const teacher of teachers) {
     teachersGrid.insertAdjacentHTML(
       "beforeend",
@@ -32,6 +35,6 @@ function displayTeachersGrid(teachers) {
             <a href="mailto:${teacher.mail}">${teacher.mail}</a>
           </article>
         `
-    );
+    ); // Insert the article into the teachers-grid element
   }
 }
